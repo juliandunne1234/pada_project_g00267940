@@ -45,4 +45,15 @@ The author was having difficutly writing the code execute this so it was decided
 - df_cvd['BMI']: Body Mass Index (BMI) classification to be used to determine the weight category each subject in the dataset is in. This variable uses the truncated normal distribution whereby the data is truncated so that BMI values under 18.5 are not included in the data.
 ***
 ### Determing the cause of death:
-The objective of this part of the project is to assign a weighting to the values in each variable of the dataset. This weighting will then be used when determining if a person has died from CVD or not.
+The objective of this part of the project is to assign a weighting to the values in each variable of the dataset using a risk assessment approach. This weighting known as the 'correlation' variable will then be used when determining if a person has died from CVD or not.
+
+Once the 'correlation' values are created, the notebook then uses these values to assign a probability that either the cause of death is 'cvd' or 'other'. The higher the correlation value the likelier that the person has died from cardiovascular disease. The random choice method is used for generating the 'cause_of_death' variable which completes the dataset. A seperate final_cvd_df is generated where the 'correlation' variable is dropped. This is just to display the dataset in full.
+***
+## Project Summary & Lessons Learned:
+While generating the dataset the author had to change direction several times as there was many difficulties trying to write the code that would generate the desired output. It was possible to overcome one issue by reattempting the variables and their format as explained above, however some of the code in these variables is fairly long winded as the author was having difficulty looping through multiple lists and arrays. This will be an area the author will look to make improvements for personal development.
+
+The dataset in its final format is not what the author had initially planned. Following the population distribution of a living population is not actually suitable for this dataset in which all of the sample size actaully dies. The dataset has 50% of the age groups below 45 years of age. Cardiovascular disease does not have as great of an impact on people below this age and therefore the dataset shows a lower number of people dying from the disease than would be expected in a population. However for the purposes of the dataset, the results do make sense in that it shows less people died from the disease.
+
+Finally, creating graphs that showed the impact each variable had on the cause of death has not been easy. Instead it was decided that using the 'correlation' variable would act as a substitute as this value was determined based on the combination of values for each of the variables.
+
+***
